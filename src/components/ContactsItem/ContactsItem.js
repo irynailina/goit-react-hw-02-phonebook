@@ -1,7 +1,13 @@
 import React from "react";
 
-export default function ContactsItem({ contact}) {
-return <li >
-    <span>{contact}</span>
-    </li>;
-}
+const ContactsItem = ({ contact: { id, name, number }, deleteContact }) => (
+  <>
+  <li>
+    <span>{name}:</span>
+    <span>{number}</span>
+  <button id={id} onClick={deleteContact}>Delete</button>
+  </li>
+  </>
+);
+
+export default ContactsItem;

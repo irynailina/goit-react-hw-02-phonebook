@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function InputFrom({ value, handleChange, placeholder, type, name }) {
+export default function InputForm({ value, handleChange, placeholder, type, name }) {
   return (
     <input
       type={type}
