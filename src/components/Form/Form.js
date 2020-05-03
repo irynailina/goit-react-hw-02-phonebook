@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
-import InputForm from "../InputFrom/InputForm";
+import InputForm from "../InputForm/InputForm";
+import styles from './form.module.css'
 
 class Form extends Component {
   state = {
-    // contacts: [],
+    contacts: [],
     name: "",
     number: "",
   };
@@ -36,29 +37,28 @@ class Form extends Component {
 
   render() {
     const { name, number } = this.state;
-    // console.log(contacts);
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor={uuidv4()}>Name</label>
+          <label className={styles.name} htmlFor={uuidv4()}>Name:</label>
           <InputForm
-            type="text"
+            type="tel"
             placeholder="Enter name"
             value={name}
             handleChange={this.handleChange}
             id={this.nameId}
             name="name"
           />
-          <label htmlFor={this.nameId}>Number</label>
+          <label className={styles.number} htmlFor={this.nameId}>Number:</label>
           <InputForm
-            type="number"
+            type="tel"
             placeholder="Enter number"
             value={number}
             handleChange={this.handleChange}
             id={this.nameId}
             name="number"
           />
-          <button type="submit">Add contact</button>
+          <button className={styles.addButton} type="submit">Add</button>
         </form>
       </>
     );
