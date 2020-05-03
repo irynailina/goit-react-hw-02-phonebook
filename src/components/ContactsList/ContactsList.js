@@ -1,6 +1,7 @@
 import React from "react";
 import ContactsItem from "../ContactsItem/ContactsItem";
 import styles from "./contactsList.module.css";
+import PropTypes from "prop-types";
 
 export default function ContactsList({ contacts, deleteContact }) {
   return (
@@ -27,3 +28,8 @@ export default function ContactsList({ contacts, deleteContact }) {
     </div>
   );
 }
+
+ContactsList.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.object),
+  deleteContact: PropTypes.func.isRequired,
+};

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./contactsItem.module.css";
+import PropTypes from "prop-types";
 
 const ContactsItem = ({
   contact: { id, name, number },
@@ -20,3 +21,12 @@ const ContactsItem = ({
 );
 
 export default ContactsItem;
+
+ContactsItem.propTypes = {
+  contact: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }),
+  deleteContact: PropTypes.func.isRequired,
+};

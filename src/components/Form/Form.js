@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from "uuid";
 import InputForm from "../InputForm/InputForm";
-import styles from './form.module.css'
+import styles from "./form.module.css";
 
 class Form extends Component {
   state = {
@@ -40,7 +40,9 @@ class Form extends Component {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
-          <label className={styles.name} htmlFor={uuidv4()}>Name:</label>
+          <label className={styles.name} htmlFor={uuidv4()}>
+            Name:
+          </label>
           <InputForm
             type="tel"
             placeholder="Enter name"
@@ -49,7 +51,9 @@ class Form extends Component {
             id={this.nameId}
             name="name"
           />
-          <label className={styles.number} htmlFor={this.nameId}>Number:</label>
+          <label className={styles.number} htmlFor={this.nameId}>
+            Number:
+          </label>
           <InputForm
             type="tel"
             placeholder="Enter number"
@@ -58,7 +62,9 @@ class Form extends Component {
             id={this.nameId}
             name="number"
           />
-          <button className={styles.addButton} type="submit">Add</button>
+          <button className={styles.addButton} type="submit">
+            Add
+          </button>
         </form>
       </>
     );

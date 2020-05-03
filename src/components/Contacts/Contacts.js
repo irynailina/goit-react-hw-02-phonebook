@@ -27,7 +27,6 @@ class Contacts extends Component {
     const newName = this.state.contacts.some(
       (contact) => contact.name === name
     );
-    console.log(newName);
     if (!newName) {
       this.setState((prevstate) => ({
         // error: false,
